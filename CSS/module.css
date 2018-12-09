@@ -1,0 +1,598 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*
+#####################################################################
+
+	目次【INDEX】
+	
+#####################################################################
+
+1. タイポグラフィ
+
+　＿見出し
+
+　＿本文
+
+　＿注釈、補足情報
+
+　＿ボーダー
+
+2. リンク
+
+　＿下線付きテキスト
+
+　＿アニメーション：下線伸縮
+
+3.ボックス
+
+　＿色
+
+　＿影
+
+4. アイコン
+
+　＿アイコン一覧
+
+　＿テキスト無しボックス
+
+5.ボタン
+
+　＿内側シャドウ
+
+
+6.ナビゲーション
+
+　＿アイコン化
+
+7.リスト
+
+8.フォーム
+
+　＿ベース
+
+　＿スタイル
+
+　＿左右に整列
+
+　＿ボタン
+
+　＿Contact Form 7　送信完了【wpcf7-mail-sent-ok】
+
+9.トランジョン
+
+10.ページチェンジエフェクト
+
+　＿ベース
+
+　＿フェードイン／フェードアウト
+
+11.アワード
+
+
+/*
+#####################################################################
+
+	タイポグラフィ
+	
+#####################################################################
+*/
+
+/* ****************************************************
+  見出し【heading】
+***************************************************** */
+
+.heading1, .heading2, .heading3{
+    margin: 0;
+	letter-spacing: 0.14rem;
+	font-weight:400;
+}
+
+.heading1 { font-size: 32px; padding-bottom: 16px; }
+.heading2 { font-size: 1.25rem; }
+.heading3 { font-size: 1rem; }
+
+/* ****************************************************
+  本文【Body copy】
+***************************************************** */
+
+.p1, .p2, .p3{
+    margin: 0;
+}
+
+.p1 { font-size: 1rem; 
+	font-family:"游ゴシック","YuGothic","ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;}
+.p2 { font-size: 0.9rem; letter-spacing:0.1rem; font-weight:300;}/*主に英語に使用*/
+.p3 { font-size: 0.8rem; letter-spacing:0.05rem; font-weight:300;}
+
+/* ****************************************************
+  注釈、補足情報【Small Text】
+***************************************************** */
+
+.small1 { font-size: 0.85rem; letter-spacing:0.08rem; }
+
+
+/* ****************************************************
+  ボーダー【border】
+***************************************************** */
+.borderLeft{ position:relative; padding-left:28px;}
+.borderLeft span{
+	display:block;
+	position:absolute;
+	left:0;
+	height:1px;
+	
+	width:20px;
+	top:9px;
+	border-bottom: 1px solid #1a1a1a;
+}
+
+
+/*
+#####################################################################
+
+	リンク
+	
+#####################################################################
+*/
+
+/* ****************************************************
+  リンク【link】
+***************************************************** */
+
+.link{
+    cursor: pointer;
+	background: transparent none repeat scroll 0 0;
+}
+
+
+/* ****************************************************
+  下線付きテキスト【link-underline】
+***************************************************** */
+
+.link-underline{ text-decoration:underline;}
+.link-underline:hover{ text-decoration:none;}
+
+
+/* ****************************************************
+  アニメーション：下線伸縮【link-animeline01】
+***************************************************** */
+.link-animeline01 span {
+  background: -webkit-linear-gradient(#1a1a1a, #1a1a1a) center 1.09em no-repeat;
+  background: linear-gradient(#1a1a1a, #1a1a1a) center 1.16em no-repeat;
+
+  background-size: 0% 1px;
+}
+
+.link-animeline01 span:hover {
+  background-size: 100% 1px;
+}
+
+/*
+#####################################################################
+
+	ボックス
+	
+#####################################################################
+*/
+
+/* ****************************************************
+  色【bg-gray】
+***************************************************** */
+
+.bg-gray { background: #eff0ee none repeat scroll 0 0; }
+
+/* ****************************************************
+  影【bg-shadow】
+***************************************************** */
+
+.bg-shadow{/*ボトムにシャドウ*/
+	box-shadow:rgba(0, 0, 0, 0.3) 0px 10px 30px 0px;
+	-webkit-box-shadow:rgba(0, 0, 0, 0.3) 0px 10px 30px 0px;
+	-moz-box-shadow:rgba(0, 0, 0, 0.3) 0px 10px 30px 0px;
+}
+
+/* ****************************************************
+  影右側【bg-shadow-right】
+***************************************************** */
+
+.bg-shadow-right{
+	background: url("../img/common/shadow01.png") repeat-y scroll right top;
+}
+
+@media screen and (max-width : 800px){
+	.bg-shadow-right{
+		background: none;
+	}
+}
+
+/*
+#####################################################################
+
+	アイコン
+	
+#####################################################################
+*/
+
+/* ****************************************************
+  アイコン【icon】
+***************************************************** */
+
+a.icon::before {
+    display: inline-block;
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    text-transform: none;
+    vertical-align: middle;
+}
+
+/* ****************************************************
+  アイコン一覧
+***************************************************** */
+
+.icon-twitter::before{ content: "\f099"; }/*twitter*/
+.icon-flickr::before{ content: "\f16e"; }/*flickr*/
+.icon-facebook::before{ content: "\f09a"; }/*facebook*/
+.icon-bars::before{ content: "\f0c9"; }/*bars ※ナビアイコン（三）*/
+.icon-times::before{ content: "\f00d"; }/*times ※バツ（×）*/ 
+.icon-angle-right::before{ content: "\f105"; }/*矢印（右・細）*/ 
+.icon-angle-left::before{ content: "\f104"; }/*矢印（左・細）*/
+
+/* ****************************************************
+  テキスト無しボックス
+***************************************************** */
+
+.icon-box::before{ 
+	width:24px;
+	height:23px;
+	color:#242424;
+	font-size:11px;
+	line-height:2.2;
+}
+@media screen and (max-width : 479px){
+	.icon-box::before{ 
+		line-height:2.4;
+	}
+}
+
+/*
+#####################################################################
+
+	ボタン【button】
+	
+#####################################################################
+*/
+
+/* ****************************************************
+  ボタン【button】
+***************************************************** */
+
+.button,
+a.button{
+	text-decoration:none;
+    border: medium none;
+    border-radius: 1px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+	text-align:center;
+}
+
+/* ****************************************************
+  ボックスシャドウ【box-shadow】
+***************************************************** */
+
+.box-shadow{	
+	background-color:#FFF;
+	
+	box-shadow:rgba(0, 0, 0, 0.19) 0px 1px 5px 0px inset;
+	-webkit-box-shadow:rgba(0, 0, 0, 0.19) 0px 1px 5px 0px inset;
+	-moz-box-shadow:rgba(0, 0, 0, 0.19) 0px 1px 5px 0px inset;
+	
+	border:1px solid #FFF;/*外側に1pxの白いライン*/
+}
+.box-shadow:hover{ 
+	background-color:#f7f7f7;
+	filter: alpha(opacity=100);
+	-moz-opacity:1.0; opacity:1.0;
+}
+
+/* ****************************************************
+  ボックスカラー【box-color】
+***************************************************** */
+
+.box-color-red{
+	background: url("../img/common/bg03.jpg") repeat scroll 0 0;
+}
+.box-color-red:hover{ 
+	filter: alpha(opacity=85);
+	-moz-opacity:0.85;
+	opacity:0.85;
+}
+
+
+/*
+#####################################################################
+
+	ナビゲーション【Navigation】
+	
+#####################################################################
+*/
+.Navigation{ 
+	position:relative;
+	letter-spacing: 0.1em;
+    line-height:1.8em;
+
+}
+@media screen and (max-width : 1213px){
+	.Navigation{		
+		left:55px;
+		top:-5px;
+		
+	}
+}
+
+@media screen and (max-width : 479px){
+	.Navigation{
+		overflow:hidden;
+		position:fixed;
+		width:100%;
+		height:100%;
+		z-index:-1;
+		top: auto;
+		left: auto;
+		background: url("../img/common/bg02.jpg") repeat scroll 0 0;
+	}
+	.Navigation a{
+		display:block;
+		text-align:center;
+		height:90px;
+		line-height:90px;
+		border-bottom:1px solid #FFF; 
+	}
+	/*ホバー時*/
+	.Navigation a:hover{
+		background-color:rgba(255, 255, 255, 0.7);
+	}
+}
+
+/* ****************************************************
+  アイコン化【アイコンボタン】
+***************************************************** */
+
+/*基本設定*/
+.Navigation-icon{ width:100%; display:none;}
+.Navigation-icon ul{ position: relative; }
+.Navigation-icon li{ position:absolute; }
+.Navigation-icon-btn_off{ display:none;/*閉じるボタン隠す*/}
+
+@media screen and (max-width : 1213px){
+	.Navigation-icon{ display: inline;}
+	/*ボタン位置*/
+	.Navigation-icon li{		
+		top:0;
+		right:2x;
+	}
+}
+@media screen and (max-width : 479px){	
+	.Navigation-icon{ 
+		display: inline;
+		position:fixed;/*上部に固定*/
+		top:0;
+	}
+	/*ボタン位置*/
+	.Navigation-icon li{		
+		top:15px;
+		right:10px;
+	}
+	/*ボタンサイズ*/
+	.Navigation-icon .icon-box::before{ 
+		width:32px;
+		height:32px;
+		font-size: 0.975rem;
+	}
+}
+
+
+/*
+#####################################################################
+
+	リスト【Lists】
+	
+#####################################################################
+*/
+
+/* ****************************************************
+  リスト【list】
+***************************************************** */
+
+/*リセット*/
+ul.list, ol.list{ 
+	padding: 0;
+	list-style:none;
+}
+
+/*微調整*/
+ul.list, ol.list{ line-height:1.8rem;}
+
+
+/*
+#####################################################################
+
+	フォーム【formInput】
+	
+#####################################################################
+*/
+
+.formInput{ max-width:680px;}
+
+/* ****************************************************
+  インプット【ベース】
+***************************************************** */
+
+.textInput input,
+.textInput textarea{
+	box-sizing: border-box;
+	
+	width:100%;
+    padding: 11px 20px;
+	margin-bottom:20px;
+}
+.textInput textarea{ height:80px; }
+
+@media screen and (max-width : 800px){
+	.textInput textarea{ height:140px; }
+}
+
+
+/* ****************************************************
+  インプット【スタイル】
+***************************************************** */
+
+.textInput .box-shadow{		
+	box-shadow:rgba(0, 0, 0, 0.19) 0px 1px 5px 0px inset;
+	-webkit-box-shadow:rgba(0, 0, 0, 0.19) 0px 1px 5px 0px inset;
+	-moz-box-shadow:rgba(0, 0, 0, 0.19) 0px 1px 5px 0px inset;
+	
+	filter: alpha(opacity=90);
+	-moz-opacity:0.9; opacity:0.9;
+	
+	background-color:rgba(228, 229, 227, 0.50);
+	border:1px solid #fafafa;/*外側に1pxの白いライン*/
+}
+.textInput .box-shadow:hover{ 
+	background-color:rgba(203, 204, 202, 0.50);
+}
+
+/* ****************************************************
+  インプット【左右に整列】
+***************************************************** */
+
+.textInput-left,.textInput-right{ width:50%;}
+.textInput-left{ float:left; padding-right:15px;}
+.textInput-right{ float:right; padding-left:15px;}
+
+/* ****************************************************
+  ボタン【submit】
+***************************************************** */
+
+/*ベース指定*/
+.submit input{
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 60px;
+	color:#FFFFFF;
+	letter-spacing:0.1rem;
+
+}
+
+/* ****************************************************  
+	Contact Form 7　送信完了【wpcf7-mail-sent-ok】
+***************************************************** */
+/*リセット*/
+.wpcf7-mail-sent-ok,
+.wpcf7-response-output{
+	border:none !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+/*詳細設定*/
+.wpcf7-mail-sent-ok{
+	background-color:rgba(228, 229, 227, 0.5) !important;
+	padding:11px 20px !important;
+	margin:20px 0 !important;
+}
+
+/*
+#####################################################################
+
+	トランジョン
+	
+#####################################################################
+*/
+
+/* ****************************************************
+  一括指定【easeOutExpo】
+***************************************************** */
+
+/*スピード標準*/
+.button,
+a.button,
+.Navigation,
+.Navigation a,
+.textInput .box-shadow,
+.link-animeline01 span,
+.box-animeline01 .thum-caption
+{
+	-webkit-transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+	transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+/*
+#####################################################################
+
+	ページチェンジエフェクト【pageChange】
+	
+#####################################################################
+*/
+
+/* ****************************************************
+ ベース
+***************************************************** */
+
+.animsition,
+.animsition-overlay {
+  position: relative;
+  opacity: 0;
+  animation-fill-mode: both;
+
+}
+
+/**
+ * overlay option
+ */
+.animsition-overlay-slide {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+}
+
+/* ****************************************************
+ フェードイン／フェードアウト
+***************************************************** */
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.fade-in {
+  animation-name: fade-in;
+}
+
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.fade-out {
+  animation-name: fade-out;
+}
+
